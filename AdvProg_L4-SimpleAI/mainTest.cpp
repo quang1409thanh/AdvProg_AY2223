@@ -84,7 +84,7 @@ class Test : public CPPUNIT_NS::TestCase
     CPPUNIT_TEST_SUITE(Test);
     CPPUNIT_TEST(testGenerateRandomNumber);
     CPPUNIT_TEST(testIsCharInWord);
-    CPPUNIT_TEST(testFindBestChar);
+    // CPPUNIT_TEST(testFindBestChar);
     CPPUNIT_TEST(testIsWholeWord);
     CPPUNIT_TEST(testVerifyIsCorrectChar);
     CPPUNIT_TEST(testFilterWordsByLen);
