@@ -58,7 +58,7 @@ char nextCharWhenWordIsNotInDictionary(const set<char> &selectedChars)
     Args:
         candidateWords (vector<string>): The candidate words for the current given string
     Returns:
-        answer (map) : The map which count the occurrences of character in the set of candidate words
+        answer (map) : The map which count the occurences of character in the set of candidate words
 ***/
 
 map<char, int> countOccurrences(const vector<string> &candidateWords)
@@ -185,3 +185,41 @@ bool wordConformToMask(const string &word, const string &mask, char ch)
     // Write your code here
     return answer;
 }
+
+/***
+    Args:
+        mask (string): The response mask by the player
+        words (vector<string>): The candidate words
+        ch (char): The predicted character by the AI
+    Returns:
+        answer (bool) : a list of word which satisfiy the mask and the predicted character
+        Examples: input words: (good,boot,hood,...)
+                  input mask: -ood
+                  predicted char: d
+                  Return: good,hood
+***/
+vector<string> filterWordsByMask(const vector<string> &words, const string &mask, char ch)
+{
+    vector<string> answer;
+    for (string word : words)
+    {
+        bool check = true;
+        if (word.length() == mask.length())
+        {
+
+            for (int i = 0; i < word.length(); i++)
+            {
+                if (word[i] != mask[i] && mask[i] != '-')
+                {
+                    check = false;
+                    break;
+                }
+            }
+        }
+        if (check)
+            answer.push_back(word);
+    }
+    // Write your code here
+    return answer;
+}
+

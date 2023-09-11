@@ -109,7 +109,7 @@ int main()
             else
             {
                 cout << "out" << endl;
-                save_filter(1, candidateWords, responsedMask, nextChar);
+                // save_filter(1, candidateWords, responsedMask, nextChar);
                 candidateWords = filterWordsByMask(candidateWords, responsedMask, nextChar);
                 save_filter(0, candidateWords, responsedMask, nextChar);
             }
